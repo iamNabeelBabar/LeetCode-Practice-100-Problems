@@ -55,6 +55,37 @@ Output: [0,1]
 - For each number, check if `target - num` exists in the map.
 - **Time Complexity:** O(n)
 - **Space Complexity:** O(n)
+
+TWO SUM PROBLEM (HASH MAP METHOD)
+│
+├── Input:
+│     ├── numbers = [2, 7, 11, 15]
+│     └── target_sum = 9
+│
+├── Step 1: Initialize empty hash map
+│     └── value_to_index = {}
+│
+├── Step 2: Iterate over list using enumerate()
+│
+│   ┌────────────────────────────────────────────┐
+│   │ For each (current_index, current_value):   │
+│   └────────────────────────────────────────────┘
+│
+│     ├── Compute required_value = target_sum - current_value
+│     │
+│     ├── Check if required_value exists in hash map:
+│     │       ├── YES → return [value_to_index[required_value], current_index]
+│     │       └── NO  → store current_value in hash map:
+│     │                value_to_index[current_value] = current_index
+│     │
+│     └── Continue loop
+│
+├── Step 3: If no pair found (edge case) → return None or raise exception
+│
+└── Output:
+      ├── Pair of indices [i, j]
+      └── Where numbers[i] + numbers[j] = target_sum
+
 ---
 ## References
 
